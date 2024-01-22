@@ -1,0 +1,20 @@
+
+<section class="companies-wrapper">
+
+<p style="color: green"><%= notice %></p>
+
+<h1>Companies</h1>
+
+<div id="companies">
+    <%= render partial: 'company', collection: @companies %>
+
+    <% @companies.each do |company| %>
+      <p>
+        <%= link_to "Show this company", company %>
+      </p>
+    <% end %>
+</div>
+
+<%= link_to "New company", new_company_path %>
+
+</section>
