@@ -6,6 +6,9 @@ one:
   email: MyString
   phone: MyString
   owner_name: MyString
+  business_address: MyString
+  business_postcode: MyString
+  employee_count: 1
 
 two:
   user_id: MyString
@@ -13,3 +16,6 @@ two:
   email: MyString
   phone: MyString
   owner_name: MyString
+  business_address: MyString
+  business_postcode: MyString
+  employee_count: 1

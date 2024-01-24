@@ -1,0 +1,31 @@
+<h2 style="color: green; text-align: center"><%= notice %></h2>
+
+<h1 style="text-align: center">Client Details</h1>
+
+<div class="companies-dash-container" id="companies">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Client ID</th>
+        <th scope="col">Client Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Client Address</th>
+        <th scope="col">Client Postcode</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @client_details.each do |client_detail| %>
+        <tr>
+          <td><%= link_to client_detail.client_id, client_detail_path(client_detail.client_id) if client_detail.client_id.present? %></td>
+          <td><%= client_detail.client_name %></td>
+          <td><%= client_detail.email %></td>
+          <td><%= client_detail.number %></td>
+          <td><%= client_detail.client_address %></td>
+          <td><%= client_detail.client_postcode %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to "New Client Detail", new_client_detail_path, class: "btn btn-warning" %>
+</div>

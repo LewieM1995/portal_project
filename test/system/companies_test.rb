@@ -14,8 +14,11 @@ class CompaniesTest < ApplicationSystemTestCase
     visit companies_url
     click_on "New company"
 
+    fill_in "Business address", with: @company.business_address
     fill_in "Business name", with: @company.business_name
+    fill_in "Business postcode", with: @company.business_postcode
     fill_in "Email", with: @company.email
+    fill_in "Employee count", with: @company.employee_count
     fill_in "Owner name", with: @company.owner_name
     fill_in "Phone", with: @company.phone
     fill_in "User", with: @company.user_id
@@ -29,8 +32,11 @@ class CompaniesTest < ApplicationSystemTestCase
     visit company_url(@company)
     click_on "Edit this company", match: :first
 
+    fill_in "Business address", with: @company.business_address
     fill_in "Business name", with: @company.business_name
+    fill_in "Business postcode", with: @company.business_postcode
     fill_in "Email", with: @company.email
+    fill_in "Employee count", with: @company.employee_count
     fill_in "Owner name", with: @company.owner_name
     fill_in "Phone", with: @company.phone
     fill_in "User", with: @company.user_id

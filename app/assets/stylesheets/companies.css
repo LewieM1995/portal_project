@@ -8,3 +8,38 @@
     margin: auto;
     padding: 20px;
   }
+
+  .card {
+    padding: 20px;
+    width: 400px;
+    margin: auto;
+  }
+
+  .companies-dash-container {
+    width: 80%;
+    margin: auto auto;
+  }
+
+  .form-new-container {
+    width: 80%;
+    margin: auto auto;
+  }
+
+  .form-new-container form {
+    margin-top: 3rem;
+  }
+
+  .form-floating {
+    width: 300px;
+    margin: auto auto;
+  }
+
+  .back-to-companies-btn {
+    width: 114px;
+    margin: auto auto;
+  }
+
+  .create-new-btn {
+    width: 110px;
+    margin: auto auto;
+  }

@@ -1,0 +1,47 @@
+<%= form_with(model: @client_detail, url: @client_detail.persisted? ? client_detail_path(@client_detail) : client_details_path, method: @client_detail.persisted? ? :patch : :post) do |form| %>
+  <% if @client_detail.errors.any? %>
+    <div style="color: red; border: 1px red solid;" class="mb-3">
+      <h2><%= pluralize(@client_detail.errors.count, "error") %> prohibited this company from being saved:</h2>
+
+      <ul>
+        <% @client_detail.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-floating mb-3">
+    <%= form.text_field :client_id, class: "form-control", id: "user_id", placeholder: "Unique ID" %>
+    <%= form.label :client_id, "Unique ID", class: "form-label", for: "user_id" %>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= form.text_field :client_name, class: "form-control", id: "business_name", placeholder: "Business Name" %>
+    <%= form.label :client_name, "Business Name", class: "form-label", for: "business_name" %>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= form.text_field :email, class: "form-control", id: "email", placeholder: "Email" %>
+    <%= form.label :email, "Email", class: "form-label", for: "email" %>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= form.text_field :number, class: "form-control", id: "phone_no", placeholder: "Phone Number" %>
+    <%= form.label :number, "Phone Number", class: "form-label", for: "phone_no" %>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= form.text_field :client_address, class: "form-control", id: "business_address", placeholder: "Business Address" %>
+    <%= form.label :client_address, "Business Address", class: "form-label", for: "business_address" %>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= form.text_field :client_postcode, class: "form-control", id: "business_postcode", placeholder: "Business Postcode" %>
+    <%= form.label :client_postcode, "Business Postcode", class: "form-label", for: "business_postcode" %>
+  </div>
+
+  <div class="create-new-btn">
+    <%= form.submit "Save Company", class: "btn btn-success"%>
+  </div>
+<% end %>

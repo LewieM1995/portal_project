@@ -1,0 +1,11 @@
+<div class="form-new-container">
+  <h1 style="text-align: center; margin-top: 1rem">New Client Detail</h1>
+
+  <%= render "form", client_detail: @client_detail %>
+
+  <br>
+
+  <div class="back-to-companies-btn">
+    <%= link_to "Back to Clients", client_details_path, class: "btn btn-primary" %>
+  </div>
+</div>

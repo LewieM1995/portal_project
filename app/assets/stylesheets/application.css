@@ -14,6 +14,10 @@
  *= require_self
  */
 
+
+ * {
+  font-family: Oswald;
+ }
  
 .custom-signup-link {
     background-color: rgb(210, 210, 245);
