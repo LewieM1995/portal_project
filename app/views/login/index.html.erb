@@ -1,2 +1,18 @@
-<h1>Login#index</h1>
-<p>Find me in app/views/login/index.html.erb</p>
+
+<section class="login-section">
+    <div class="login-title">
+        <h1>Business Portal Login</h1>
+    </div>
+    <div class="login-container">
+        <%= simple_form_for :user, url: sessions_path, method: :post do |f| %>
+        <%= f.input :client_id, required: true, placeholder:"Login ID", input_html: { class: 'form-control' }, wrapper_html: { class: "mb-3" }%>
+        <%= f.input :first_name, required: true, placeholder:"Jane", input_html: { class: 'form-control' }, wrapper_html: { class: "mb-3" } %>
+        <%= f.input :password, required: true, as: :password, placeholder:"Password", input_html: { class: 'form-control' }, wrapper_html: { class: "mb-3" } %>
+        <%= f.button :submit, "Log in", class: "btn btn-primary" %>
+        <%= link_to "Sign up", new_user_path, class: "btn btn-primary" %>
+        <% end %>
+    </div>
+</section>
+
+
+

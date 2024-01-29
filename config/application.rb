@@ -13,6 +13,10 @@ module PortalProject
     # config/application.rb
     config.assets.enabled = true
 
+    if Rails.env.development? || Rails.env.test?
+      require 'dotenv/load'
+    end
+    
 
     # Configuration for the application, engines, and railties goes here.
     #

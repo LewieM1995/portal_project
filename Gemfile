@@ -36,6 +36,18 @@ gem 'simple_form'
 # Bootstrap
 gem 'bootstrap', '~> 5.0.0'
 
+# SDK PayPal REST API payment service
+gem 'paypal-sdk-rest'
+
+# dotenv
+gem 'dotenv-rails', groups: [:development, :test]
+
+# Pay Gem for Stripe
+gem 'pay'
+
+# Stripe
+gem 'stripe'
+
 
 
 # Use Redis adapter to run Action Cable in production

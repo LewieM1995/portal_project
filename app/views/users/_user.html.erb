@@ -1,0 +1,37 @@
+<div id="<%= dom_id user %>">
+  <p>
+    <strong>Name:</strong>
+    <%= "#{user.first_name} #{user.last_name}" %>
+  </p>
+
+  <p>
+    <strong>Contact Number:</strong>
+    <%= user.phone %>
+  </p>
+
+  <p>
+    <strong>Address(first line):</strong>
+    <%= user.address_first %>
+  </p>
+
+  <p>
+    <strong>Address(second line):</strong>
+    <%= user.address_second %>
+  </p>
+
+  <p>
+    <strong>Address(third line):</strong>
+    <%= user.address_third %>
+  </p>
+
+  <p>
+    <strong>Postcode:</strong>
+    <%= user.postcode %>
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= user.email %>
+  </p>
+
+</div>

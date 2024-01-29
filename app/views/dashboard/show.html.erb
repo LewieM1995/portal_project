@@ -1,0 +1,27 @@
+
+<section class="dashboard-section">
+    <div class="dashboard-title">
+        <h1>Welcome to your Dashboard, <%= @user.first_name %>!</h1>
+    </div>
+    
+<div class="dashboard-cards-container">
+    <div class="dashboard-cards">
+        <%= render "users/user", user: @user %>
+        <% if session[:user_id] %>
+        <%= link_to 'Logout', logout_path, method: :delete, class: "btn btn-primary" %>
+        <% end %>
+    </div>
+    <div class="dashboard-cards">
+        <p>Later changes to a table with payment history</p>
+        <%= render "users/user", user: @user %>
+        <% if session[:user_id] %>
+        <%= link_to 'Logout', logout_path, method: :delete, class: "btn btn-primary" %>
+        <% end %>
+    </div>
+    <div class="dashboard-cards">
+        <p>later changes to a sticky note type board to allow clients to push forward repair requests</p>
+    </div>
+</div>
+    
+    
+</section>
