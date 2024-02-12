@@ -1,10 +1,12 @@
-<p style="color: green"><%= notice %></p>
 
-<%= render @user %>
 
-<div>
-  <%= link_to "Edit this user", edit_user_path(@user) %> |
-  <%= link_to "Back to users", users_path %>
+<div style="width: 90%; margin: auto">
+  <p style="color: green"><%= notice %></p>
 
-  <%= button_to "Destroy this user", @user, method: :delete %>
+  <%= render @user %>
+
+  <div>
+    <%= link_to "Edit this user", edit_user_path(@user.client_id), class: "btn btn-warning" %> |
+    <%= link_to "Back to users", users_path, class: "btn btn-primary" %>
+  </div>
 </div>

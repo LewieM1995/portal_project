@@ -1,0 +1,22 @@
+<%= form_for(@property, id: "editForm") do |f| %>
+  <div class="field">
+    <%= f.label :property_name %>
+    <%= f.text_field :property_name %>
+  </div>
+  <div class="field">
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :postcode %>
+    <%= f.text_field :postcode %>
+  </div>
+  <div class="field">
+    <%= f.label :owner_name %>
+    <%= f.text_field :owner_name %>
+  </div>
+  <%= f.submit "Update Property", class: "btn btn-primary" %>
+  <%= link_to 'Back to properties', properties_path, class: 'btn btn-primary' %>
+<% end %>
+
+

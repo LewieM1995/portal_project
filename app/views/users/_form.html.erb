@@ -1,25 +1,33 @@
 
 <div class="acc-creation-container">
-  <%= simple_form_for(@user) do |f| %>
+  <div style="width: 250px; margin: auto;">
+    <%= simple_form_for(@user) do |f| %>
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-        <%= f.input :first_name, required: true, placeholder:"Mary", input_html: { class: 'form-control' }, wrapper_html: { class: "mb-3" } %>
-        <%= f.input :last_name, required: true, placeholder:"Jane", input_html: { class: 'form-control' }, wrapper_html: { class: "mb-3" } %>
-        <%= f.input :phone, required: true, placeholder:"07827463512", input_html: { class: 'form-control' }, wrapper_html: { class: "mb-3" } %>
-        <%= f.input :address_first, required: true, placeholder:"House number", input_html: { class: 'form-control' }, wrapper_html: { class: "mb-3" } %>
-        <%= f.input :address_second, placeholder:"Street", input_html: { class: 'form-control' }, wrapper_html: { class: "mb-3" } %>
-        <%= f.input :address_third, placeholder:"Town/city", input_html: { class: 'form-control' }, wrapper_html: { class: "mb-3" }%>
-        <%= f.input :postcode, required: true, placeholder:"Postcode", input_html: { class: 'form-control' }, wrapper_html: { class: "mb-3" } %>
-        <%= f.input :email, required: true, placeholder:"Email", input_html: { class: 'form-control' }, wrapper_html: { class: "mb-3" } %>
-        <%= f.input :password, required: true, placeholder:"Password", input_html: { class: 'form-control' }, wrapper_html: { class: "mb-3" } %>
-        <div>
-          <%= f.label :Date_of_birth, required: true %>
-          <%= f.text_field :dob, id: 'datepicker', required: true, placeholder:"2001-01-01", class: "date-picker" %>
+        <%= f.input :first_name, placeholder:"Mary", class: "form-control" %>
+        <%= f.input :last_name, placeholder:"Jane", class: "form-control" %>
+        <%= f.input :phone, as: :string, placeholder: "07827463512", class: "form-control" %>
+        <%= f.input :address_first, placeholder:"House number", class: "form-control" %>
+        <%= f.input :address_second, placeholder:"Street", class: "form-control" %>
+        <%= f.input :address_third, placeholder:"Town/city", input_html: { class: 'form-control' }%>
+        <%= f.input :postcode, placeholder:"Postcode", class: "form-control" %>
+        <%= f.input :email, as: :string, placeholder: "Email", class: "form-control" %>
+        <%= f.input :password, as: :password, placeholder: "Password", class: "form-control" %>
+        <div class="date-picker">
+          <%= f.label :dob, 'Date of Birth' %>
+          <br>
+          <%= f.date_field :dob, input_html: { class: 'datepicker', id: 'datepicker' } %>
         </div>
-        
         <div class="form-actions">
           <%= f.button :submit, value: "Sign Up", class:"btn btn-primary" %>
         </div>
-  <% end %>
+    <% end %>
   </div>
+  </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var picker = new Pikaday({ field: document.getElementById('datepicker') });
+    });
+</script>
 

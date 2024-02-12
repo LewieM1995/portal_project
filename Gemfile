@@ -42,13 +42,9 @@ gem 'paypal-sdk-rest'
 # dotenv
 gem 'dotenv-rails', groups: [:development, :test]
 
-# Pay Gem for Stripe
-gem 'pay'
+gem 'bootstrap-datepicker-rails'
 
-# Stripe
-gem 'stripe'
-
-
+gem 'jquery-rails'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"

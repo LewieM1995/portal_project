@@ -1,0 +1,94 @@
+:root {
+    --prim-color-b: rgb(14, 135, 235)
+}
+
+.home-sec {
+    height: 180vh;
+    z-index: -5;
+}
+
+.hero-img {
+    height: 500px;
+    background: url('apartmentimages.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+}
+
+.hero-info {
+    position: relative;
+    top: 150px;
+    padding: 10px;
+    color: var(--prim-color-b);
+    background: rgba(255, 255, 255, 1);
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
+
+.hero-link-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.hero-link-wrapper a {
+    height: 50px;
+    width: 150px;
+    background: var(--prim-color-b);
+    text-align: center;
+    line-height: 50px;
+    color: white;
+    text-decoration: none;
+    margin-top: 1rem;
+}
+
+.why-us-wrapper {
+    padding: 10px;
+}
+
+.why-us-title {
+    text-align: center;
+    margin-top: 2rem;
+    color: var(--prim-color-b);
+}
+
+.sec-info-img {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 3rem auto;
+}
+
+.th-info, .thd-info {
+    padding: 10px;
+}
+
+.th-info-clip, .thd-info-clip {
+    margin-bottom: 1rem;
+}
+
+#mn-img {
+    width: 90%;
+}
+
+
+@media screen and (min-width: 700px) {
+    .hero-info {
+        width: 50%;
+    }
+    .why-us-info {
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .sec-info {
+        display: flex;
+        justify-content: center;
+    }
+    .home-sec {
+        height: 141vh;
+    }
+    .fst-info {
+        padding: 20px;
+    }
+}

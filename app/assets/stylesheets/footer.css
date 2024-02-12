@@ -1,0 +1,22 @@
+
+
+.footer-container {
+    color: aliceblue;
+    background-color: rgb(14, 135, 235);
+    margin-top: 3rem;
+}
+
+.footer-wrapper-h2 {
+    text-align: center;
+    margin: 1rem 0 1rem 0;
+}
+
+.footer-info {
+    line-height: 15px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.footer-links {
+    text-align: center;
+}

@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
-  post 'stripe/webhooks', to: 'stripe/webhooks#create'
+  resource :admin_sessions, only: [:new, :create, :destroy]
+  get '/admins', to: 'admins#index'
+  get 'admin_logout', to: 'admin_sessions#destroy', as: 'admin_logout'
+  resources :properties
+  resources :assignments, only: [:new, :create, :update]
   resource :sessions, only: [:new, :create, :destroy]
   get 'dashboard', to: 'dashboard#show', as: 'dashboard'
   get '/logout', to: 'sessions#destroy', as: 'logout'
-  resources :users
-  resources :client_details, param: :client_id
-  get 'signup', to: 'signup#index'
+  resources :users, param: :client_id
   get 'login', to: 'login#index'
   get 'about', to: 'about#index'
   root 'home#index'

@@ -1,0 +1,11 @@
+
+.table-wrapper-property {
+    margin: auto;
+    padding: 10px;
+}
+
+@media screen and (min-width: 700px ) {
+    .table-wrapper-property {
+        width: 70%;
+    }
+}

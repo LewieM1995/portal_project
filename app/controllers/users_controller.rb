@@ -3,11 +3,12 @@ class UsersController < ApplicationController
 
   # GET /users or /users.json
   def index
-    @users = User.all
+    @users = User.includes(:property).all
   end
 
   # GET /users/1 or /users/1.json
   def show
+    @user = User.find_by(client_id: params[:client_id])
   end
 
   # GET /users/new
@@ -37,9 +38,10 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1 or /users/1.json
   def update
+    @user = User.find_by(client_id: params[:client_id])
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to user_url(@user), notice: "User was successfully updated." }
+        format.html { redirect_to user_url, notice: "User was successfully updated." }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -50,22 +52,32 @@ class UsersController < ApplicationController
 
   # DELETE /users/1 or /users/1.json
   def destroy
-    @user.destroy
-
-    respond_to do |format|
-      format.html { redirect_to users_url, notice: "User was successfully destroyed." }
-      format.json { head :no_content }
+    @user = User.find_by(client_id: params[:client_id])
+  
+    if @user
+      @user.destroy
+      respond_to do |format|
+        format.html { redirect_to users_url, notice: "User: #{params[:client_id]} was successfully destroyed." }
+        format.json { head :no_content }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to users_url, alert: "User with client_id #{params[:client_id]} not found." }
+        format.json { head :not_found }
+      end
     end
   end
+  
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      @user = User.find(params[:id])
+      @user = User.find_by(client_id: params[:client_id])
     end
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :phone, :address_first, :address_second, :address_third, :postcode, :email, :password, :client_id, :dob)
+      params.require(:user).permit(:first_name, :last_name, :phone, :address_first, :address_second, :address_third, :postcode, :email, :password, :client_id, :dob, :property_id)
     end
 end

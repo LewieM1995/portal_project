@@ -1,0 +1,20 @@
+
+.utb-wrapper {
+    padding: 10px;
+}
+
+.user-table-container {
+    width: 90%;
+    margin: auto;
+}
+
+.field select {
+    padding: 5px
+}
+
+@media screen and (min-width: 700px ) {
+    .user-table-container {
+        width: 70%;
+        margin: auto;
+    }
+}

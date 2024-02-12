@@ -1,0 +1,62 @@
+
+
+<div style="margin-top: 2rem">
+  <h1 style="text-align: center">All Properties</h1>
+
+  <section class="table-wrapper-property">
+    <div class="property-table">
+      <% if @properties.present? %>
+        <table class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>Property Name</th>
+              <th>Address</th>
+              <th>Postcode</th>
+              <th>Owner</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @properties.each do |property| %>
+              <tr>
+                <td><%= property.property_name %></td>
+                <td><%= property.address %></td>
+                <td><%= property.postcode %></td>
+                <td><%= property.owner_name %></td>
+                <td>
+                <%= link_to 'Edit', edit_property_path(property.id), class: 'btn btn-primary' %>
+                </td>
+                <td>
+                  <%= form_with(model: property, method: :delete, class: 'delete-form') do |form| %>
+                    <%= form.submit 'Remove', class: 'btn btn-danger' %>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+            <td>
+              <%= link_to 'Add Property', new_property_path, class: "btn btn-primary" %>
+            </td>
+          </tbody>
+        </table>
+      <% else %>
+        <p>No properties available.</p>
+      <% end %>
+    </div>
+  </section>
+</div>
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.delete-form').forEach(function(form) {
+      form.addEventListener('submit', function(event) {
+        var confirmed = confirm('Are you sure?');
+        if (!confirmed) {
+          event.preventDefault();
+        }
+      });
+    });
+  });
+</script>

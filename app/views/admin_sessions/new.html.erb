@@ -1,0 +1,14 @@
+<div style="width: 300px; margin: auto">
+    <h2 style="text-align: center; margin-top: 2rem">Admin Login</h2>
+    <div style="margin-bottom: 1rem">
+      <%= form_tag admin_sessions_path, class: 'login-form' do %>
+        <%= label_tag :email %>
+        <%= text_field_tag :email, nil, class: 'form-control' %>
+      
+        <%= label_tag :password %>
+        <%= password_field_tag :password, nil, class: 'form-control' %>
+    </div>
+        <%= submit_tag 'Log in', class: 'btn btn-primary' %>
+      <% end %>
+  </div>
+

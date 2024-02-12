@@ -1,0 +1,64 @@
+
+<section class="home-sec">
+    <div class="hero-img">
+        <div class="hero-info">
+            <div class="">
+                <h1>Residential block and estate management services in Sittingbourne</h1>
+            </div>
+            <div class="">
+                <span>Email: <a href="mailto:propertymanagement@business.com">Propertymanagement@business.com</a></span>
+            </div>
+            <div class="hero-link-wrapper">
+                <%= link_to "Our Services", about_path, class: "" %>
+            </div>
+        </div>
+    </div>
+    <div class="why-us-container">  
+        <div class="why-us-wrapper">
+            <div class="why-us-title">
+                <h2>Why choose us?</h2>
+            </div>
+            <div class="why-us-info">
+                <p>Property Management is a specialist residential Block and Estate Management Company with a simple approach - we manage your property as if it were our own.</p>
+            </div>
+        </div>
+    </div>
+    <div class="sec-info">
+        <div class="sec-info-img">
+            <%= image_tag("groundsimage.jpg", id: "mn-img") %>
+        </div>
+        <div class="fst-info">
+            <div class="th-info">
+                <div class="th-info-clip"><%= render 'home/clipboard' %></div>
+                <div class="th-info-text">
+                    <p><strong>No hidden extras</strong></p>
+                    <p>The price we say is the price you pay! We’re not like other managing agents – We don’t do hidden fees or change the subject when you ask us about money. We are not scared to show you our fees as we believe that we offer the most comprehensive property management services at a competitive price.</p>
+                </div>
+            </div>
+            <div class="thd-info">
+                <div class="thd-info-clip"><%= render 'home/speaker' %></div>
+                <div class="thd-info-text">
+                    <p><strong>Contactable 7 days per week</strong></p>
+                    <p>Unlike many managing agents, we’re also available out-of-hours to deal with emergencies. Our dedicated 24-hour emergency response telephone number is available 24 hours a day, 365 days a year.</p>
+                </div>
+            </div>
+        </div>
+        <div class="fst-info">
+            <div class="th-info">
+                <div class="th-info-clip"><%= render 'home/pricing' %></div>
+                <div class="th-info-text">
+                    <p><strong>Transparent Pricing</strong></p>
+                    <p>We’re one of very few managing agents who are not scared to show you our fees – This is because we believe we offer the most comprehensive service for the best price!.</p>
+                </div>
+            </div>
+            <div class="thd-info">
+                <div class="thd-info-clip"><%= render 'home/map' %></div>
+                <div class="thd-info-text">
+                    <p><strong>Regular Site Inspections</strong></p>
+                    <p>We carry out regular site inspections to ensure that all maintenance and Health & Safety requirements are kept up to date. Unlike most managing agents, we are on first name terms with many leaseholders and enjoy a good chat with them while on site.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%= render 'layouts/footer' %>
+</section>

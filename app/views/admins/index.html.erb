@@ -1,0 +1,16 @@
+
+<div class="tbl-container">
+  <h1>All Users</h1>
+  <ul>
+    <% @all_users.each do |user| %>
+      <li><%= user.first_name %> <%= user.last_name %> - <%= user.email %></li>
+    <% end %>
+  </ul>
+  
+  <h1>All Properties</h1>
+  <ul>
+    <% @all_properties.each do |property| %>
+      <li><%= property.property_name %> - <%= property.address %></li> - <%= property.postcode %></li> - <%= property.owner_name %></li>
+    <% end %>
+  </ul>
+</div>

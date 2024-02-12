@@ -1,14 +1,44 @@
-<p style="color: green"><%= notice %></p>
 
-<h1>Users</h1>
+<div class="utb-wrapper">
+  <p style="color: green"><%= notice %></p>
 
-<div id="users">
-  <% @users.each do |user| %>
-    <%= render user %>
-    <p>
-      <%= link_to "Show this user", user %>
-    </p>
-  <% end %>
+  <h1 style="text-align: center;">Users</h1>
+
+  <section class="user-table-container">
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Edit User</th>
+            <th>Delete User</th>
+            <th>Assigned Property</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @users.each do |user| %>
+            <tr>
+              <td><%= user.first_name %></td>
+              <td><%= user.last_name %></td>
+              <td><%= user.email %></td>
+              <td>
+                <%= link_to "Edit", user_path(client_id: user.client_id), class: 'btn btn-primary btn-sm' %>
+              </td>
+              <td>
+                <%= form_with(model: user, method: :delete, url: user_path(client_id: user.client_id), class: 'delete-form') do |form| %>
+                  <%= form.submit 'Remove', class: 'btn btn-danger' %>
+                <% end %>
+              </td>
+              <td><%= user.property.property_name if user.property%></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  
 </div>
 
-<%= link_to "New user", new_user_path %>
+
